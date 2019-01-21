@@ -21,7 +21,7 @@
     (cond
       [(null? lazy-list) '()]
       [(= n 0) '()]
-      [(                                      ) (append (list (car lazy-list)))]
+      [(boolean? ((cdr lazy-list))) (append (list (car lazy-list)))]
       [else (cons (car lazy-list) (first-n ((cdr lazy-list)) (- n 1)))])))
 
 (first-n (seq 1 5) 7)
